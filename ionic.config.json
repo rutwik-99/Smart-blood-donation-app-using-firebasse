@@ -1,0 +1,7 @@
+{
+  "name": "blood_draft",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

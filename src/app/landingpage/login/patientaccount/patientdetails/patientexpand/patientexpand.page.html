@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/landingpage/login/patientaccount"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Donors Near You</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-list lines>
+           <b>Radius: 5 km</b>
+           <div *ngFor="let key_1 of this.objectKeys">
+             {{key_1 + ' : ' + this.dict[key_1][0]+' Contact No:'+ this.dict[key_1][1]}};
+           </div>
+          </ion-list> 
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-list lines>
+           <b>Radius: 5 km to 10 km</b>
+           <div *ngFor="let key_1 of this.objectKeys_expand">
+            {{key_1 + ' : ' + this.dict_expand[key_1][0]+' Contact No:'+ this.dict_expand[key_1][1]}};
+           </div>
+          </ion-list> 
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-list lines>
+           <b>Radius: 10 km to 15 km</b>
+           <div *ngFor="let key_1 of this.objectKeys_expand_10">
+            {{key_1 + ' : ' + this.dict_expand_10[key_1][0]+' Contact No:'+ this.dict_expand_10[key_1][1]}};
+           </div>
+          </ion-list> 
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+    <ion-grid>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col>
+          <ion-button color="danger" (click)="(this.count%2==0)?expand():expand_10()">Expand the radius</ion-button>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>
